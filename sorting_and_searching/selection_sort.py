@@ -1,3 +1,14 @@
+"""
+Selection Sort:
+    ...find the smallest unsorted element and add it to the
+    sorted list.
+    Pseudocode:
+        Repeat until no unsorted elements remain:
+            --> Search the unsorted part of the data to find the smallest value
+            --> Swap the smallest found value with the first element of the unsorted part
+"""
+
+
 # selection_sort :: unsorted_list -> sorted_list
 def selection_sort(unsorted_list):
     """Takes an unsorted_list and returns a sorted list
@@ -12,6 +23,7 @@ def selection_sort(unsorted_list):
         move_smallest_to_sorted(sorted_list, smallest)
         remove_unsorted_element(unsorted_list, smallest)
     return sorted_list
+
 
 # find_smallest :: List -> Integer
 def find_smallest(xs):
@@ -51,7 +63,9 @@ def remove_unsorted_element(original_unsorted_list, smallest_num):
     original_unsorted_list.pop(smallest_index)
     return original_unsorted_list
 
+
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
     print(selection_sort([5, 7, 2, 6, 8, 4, 1, 3, 10, 0, 25]))
