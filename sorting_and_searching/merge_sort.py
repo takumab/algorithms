@@ -18,8 +18,15 @@ def merge(alist, blist):
     >>> merge([3, 4, 5], [6, 7, 8])
     [3, 4, 5, 6, 7, 8]
     """
+    merged_sorted_list = []
+    while len(alist) != 0 and len(blist) != 0:
+    # for i in range(len(alist)):
+    #     if alist[i] < blist[i]:
+    #         merged_sorted_list.append(alist[i])
+    #     else:
+    #         merged_sorted_list.append(blist[i])
     # .... [3, 4, 5, 6, 7, 8]
-    return 0
+    return merged_sorted_list
 
 
 if __name__ == "__main__":
