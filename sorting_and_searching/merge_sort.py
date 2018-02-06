@@ -6,27 +6,41 @@
 # Merge takes two smaller sorted list and combines them together in a single,
 # sorted, new list.
 
-
-# merge :: (List1, List2) --> merged_sorted_list
-def merge(alist, blist):
+## THE TWO LIST PASSED INTO MERGE ARE ALREADY SORTED!!!!
+## DON'T FORGET THAT (SEE ABOVE ALL CAPS SENTENCE
+# merge :: (ListL, ListR, List1) --> Sorted List
+def merge(left, right):
     """
-    Takes two sorted list and returns a merged_sorted_list
-    :param alist:
-    :param blist:
-    :return: merged_sorted_list
+    Takes two sorted list and returns a clist
+    :param left:
+    :param right:
+    :return: clist
 
     >>> merge([3, 4, 5], [6, 7, 8])
     [3, 4, 5, 6, 7, 8]
     """
-    merged_sorted_list = []
-    while len(alist) != 0 and len(blist) != 0:
-    # for i in range(len(alist)):
-    #     if alist[i] < blist[i]:
-    #         merged_sorted_list.append(alist[i])
-    #     else:
-    #         merged_sorted_list.append(blist[i])
+    i = 0
+    j = 0
+    k = 0
+    clist = []
+    while i < len(left) - 1 and j < len(right) - 1:
+        if left[i] < right[j]:
+            clist.append(left[i])
+            i = i + 1
+        else:
+            clist.append(right[j])
+            j = j + 1
+        k = k + 1
+
+    while i < len(left):
+        clist.append(left[i])
+        i = i + 1
+
+    while j < len(right):
+        clist.append(right[j])
+        j = j + 1
     # .... [3, 4, 5, 6, 7, 8]
-    return merged_sorted_list
+    return clist
 
 
 if __name__ == "__main__":
